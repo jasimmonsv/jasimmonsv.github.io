@@ -28,7 +28,7 @@ I do not believe in weekly status reports; I should be able to get that informat
 ## Deployment
 
 My job is:
-1. Build, Maintain, and own every service that is folded under our umbrella
+1. Build, maintain, and own every service that is folded under our umbrella
 2. Set context
 
 ### On Feedback
@@ -44,7 +44,10 @@ Phone call -> SMS text -> Hipchat -> Email -> Package delivery -> Carrier Pidgeo
 *This also follows my order of urgency
 
 ### Want to talk? Lets talk
-If something comes up, do not wait till our weekly 1:1. Reach out to me following my Order of communication. I do a bunch of things, and very few of them are more important then spending time talking to someone 
+If something comes up, do not wait till our weekly 1:1. Reach out to me following my Order of communication. I do a bunch of things, and very few of them are more important then spending time talking to someone who needs to talk to me.
+
+### My System
+I try my best to trend towards efficency. Because of that I try new methods, I research new ideas, and I experiment to find something that fits all my needs. Right now my system is heavly based on Getting Things Done by David Allen. My system relies heavly on simple technology and building a ritural/habit. It is not perfect, but it is a constant work in progress.
 
 ## Acknowledgments
 
