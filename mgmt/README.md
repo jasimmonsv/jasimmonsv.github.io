@@ -1,7 +1,7 @@
 # J.A. Simmons V
 v1.0.20180302 - Systems Operation Manager @Deloitte
 
-This document is a method for team members to get to know me at scale. Where I will share my expectations on how to work with me and how I will try to work with you. This is an intro into my mind and how I like to operate: my mental and operational frameworks. I believe that these topics would help you become more effective and reduce managerial overhead on my side. This document is written in the style of a project README.md.
+This document is a method for team members to get to know me at scale, where I will share my expectations on how to work with me and how I will try to work with you. This is an intro into my mind and how I like to operate: my mental and operational frameworks. I believe that these topics would help you become more effective and reduce managerial overhead on my side. This document is written in the style of a project README.md.
 
 ## Getting Started
 
@@ -47,7 +47,9 @@ Phone call -> SMS text -> Hipchat -> Email -> Package delivery -> Carrier Pidgeo
 If something comes up, do not wait till our weekly 1:1. Reach out to me following my Order of communication. I do a bunch of things, and very few of them are more important then spending time talking to someone who needs to talk to me.
 
 ### My System
-I try my best to trend towards efficency. Because of that I try new methods, I research new ideas, and I experiment to find something that fits all my needs. Right now my system is heavly based on Getting Things Done by David Allen. My system relies heavly on simple technology and building a ritural/habit. It is not perfect, but it is a constant work in progress.
+I try my best to trend towards efficency. Because of that I try new methods, I research new ideas, and I experiment to find something that fits all my needs. Right now my system is heavly based on Getting Things Done by David Allen. My system relies heavly on simple technology and building a ritural/habit. It is not perfect, but it is a constant work in progress. Because of this, I trend towards more asymetric communication. I try to check emails only twice a day, and I practice Inbox Zero, where I have actioned or captured tasks in other systems / folders and delete emails from my inbox and live out of my task tracking app (a combination between Jira and Todoist). This is a sytem that has evolved with me over the past decade, and I do not expect anyone else to adhear to my system. 
+
+What all this means is for you working with me is that: no, I do not have that email you sent me last year; no, I do not remember what exactly was said at that meeting last month; yes, I have the action list that I derived and I can tell you the state that those action items are in; If it is urgent, you need to use my Order of Communication to bring it to my attention. Sending me an email will sit there for a few hours. If I am already working on something, I am not watching new emails, tickets, tasks, pings, dings, or alarms. I am well enveloped into the zone of getting things done, and when I stop for more coffee or a bathroom break is the only window of time that I may allow something new to enter into my carefully quarentened zone. This is all a result of my current job function, and will evolve as my job evolves.
 
 ## Acknowledgments
 
