@@ -3,25 +3,10 @@ layout: default
 ---
 
 <div class="home">
-  This small corner of the internet is where I can tell you the truth about myself. My writings are elsewhere, but my philosophy is here.<br>
-  <br>
+  <h2><center>Complexity hidden by minimalism</center></h2>
+  <p>This small corner of the internet is where I can tell you the truth about myself. My writings are elsewhere, but my philosophy is here. I am from Houston, and my interests vary wildly.</p>
+  <p>I am a family man, an entrepreneur, and a nerd with a penchant for security, design/usability, and above all, usefulness. Check out my <a href=./about/>about me</a>, or if you are here for my reading list, check out <a href=./books/>my books section</a></p>
   <hr>
-  <br>
-  <h1 class="page-heading">Posts</h1>
 
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
