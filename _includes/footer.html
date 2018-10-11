@@ -2,13 +2,10 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li>{{ site.url }}</li>
-          <li>{{ }}</li>
+          &copy;2018 J.A. Simmons V
         </ul>
       </div>
 
@@ -25,6 +22,12 @@
             {% include icon-twitter.html username=site.twitter_username %}
           </li>
           {% endif %}
+
+          {% if site.instagram_username %}
+          <li>
+            {% include icon-instagram.html username=site.instagram_username %}
+          </li>
+          {% endif %}
         </ul>
       </div>
 
@@ -32,6 +35,5 @@
         <p>{{ site.description }}</p>
       </div>
     </div>
-&copy;2018 J.A. Simmons V
   </div>
 </footer>
