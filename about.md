@@ -1,15 +1,9 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Thank you for being interested enough in me to dig into my own little corner of the internet. This is my own personal site and as such reflects my own thoughts, ideas, and learning path. I am passionate about efficiency, leadership, and building great things. I have tried to get into writing more, but I rarely make the time for it.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
-
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+I am currently a "System Operations Manager" at a large, global company. That is short hand for "I build things." I build things for a security and cyber intelligence team within this large, global company. This is my vanity website, this is not my blog. I like to meet interesting people, though I am very much an introvert.
