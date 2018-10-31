@@ -21,7 +21,7 @@ Each team has a different culture, a different mood, etc. I do not manage the sa
 
 ### Installing
 
-You have joined the team, two things should definitely appear on your calendar by now. One is the weekly team meeting where we cover status reports, roadblocks, general brainstorming, and cover any gossip, rumors, and lies the team has heard. Two is the weekly 1:1 between you and me. I will not miss this 1:1; it is that important as the only guaranteed time I have with you. We will discuss any problems you are having (technical, performance, career). This is not a status meeting. This is a chance for you to have a serious discussion with me, and as such it will be at least 30 minutes long; real conversations take time.
+You have joined the team, two things should definitely appear on your calendar by now. One is the weekly team meeting where we cover status reports, roadblocks, general brainstorming, and cover any gossip, rumors, and lies the team has heard. Two is the weekly 1:1 between you and me. I will do everything I can to not miss this 1:1; it is that important as the only guaranteed time I have with you. We will discuss any problems you are having (technical, performance, career). This is not a status meeting. This is a chance for you to have a serious discussion with me, and as such it will be at least 30 minutes long; real conversations take time.
 
 I do not believe in weekly status reports; I should be able to get that information out of JIRA and save both of our time. If I cannot get that information out of JIRA, then YOU have a problem. Figure out how to account for your time within JIRA. If there is a technical limitation with JIRA in capturing your time, you need to tell me about it and then WE have a problem.
 
