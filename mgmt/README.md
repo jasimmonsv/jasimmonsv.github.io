@@ -1,7 +1,3 @@
----
-layout: none
-title: ReadMe
----
 # J.A. Simmons V
 v1.0.20180302 - Systems Operation Manager @Deloitte
 
