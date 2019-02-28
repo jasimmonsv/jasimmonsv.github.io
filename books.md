@@ -13,7 +13,7 @@ Unfortunatly due to my schedule (I hate to word busy), I rarely have down time t
 
 * * *
 
-##My philosophy on Reading Books
+## My philosophy on Reading Books
 Books are part and parsel for an educated mind, regardless if it is self-directed, or formed by external factors (e.g., English Lit). I mostly read non-fiction just because there is alot that I still want to learn. But reading fiction is just as important, as it has driven the human conversation for generations. Fiction has played just as big a role , if not bigger, in the evolution of human cultures through references to Romeo and Juliette, or to Machiavelli, or Sinclair's The Jungle. I believe those people that forsake fiction fom non-fiction are missing a huge chunk of knowledge that is just as vital.
 
 With that said, my strategy for choosing a book is very interesting:
