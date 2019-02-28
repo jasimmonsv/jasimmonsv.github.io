@@ -7,7 +7,7 @@ This document is a method for team members to get to know me at scale, where I w
 
 Between Texas high-school football and 5 years in the Navy, I am accustom to being called Simmons. Just Simmons. My wife and my family call me by my first name. Also people trying to sell me something. If I don't know you for 10+ years and you call me by my first name, then I am going to assume you are trying to take something from me, and our interaction will be reflected accordingly.
 
-As I said, I spent 5 years in the Navy, and that is where a lot of my first management experiences where formed. E.g., I always try to be 10 minutes early to every meeting. If you are on time and I am not on the call, something in my usual system (detailed below) has failed and I have forgotten that meeting. Ping me; Remind me that I am suppose to be meeting you somewhere. With that said, I will give you 5 minutes to make the meeting (I will also ping you as well). I have already invested 10+ minutes into this meeting, I will not invest more until you start investing in kind.
+As I said, I spent 5 years in the Navy, and that is where a lot of my first management experiences where formed. E.g., I always try to be 10 minutes early to every meeting. If you are on time and I am not on the call, something in my usual system (detailed below) has failed and I have forgotten that meeting. Ping me; Remind me that I am suppose to be meeting you somewhere. With that said, I will give you 10 minutes to make the meeting (I will also ping you as well). I have already invested 10+ minutes into this meeting, I will not invest more until you start investing in kind.
 
 I use "colorful" language. This is an artifact from said time in the Navy. I am working on it, but best be warned.
 
