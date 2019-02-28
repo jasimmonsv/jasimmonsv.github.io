@@ -12,4 +12,4 @@ people out there in that scene, doing good things, but the majority of overheard
 where just sad and not a good path forward for technologists. Luckily, those people are but a small minority over 
 the sheer number of people building things every day.
 
-You can [puruse some of my code](https://github.com/jasimmonsv), and I will [write about things in my blog]().
+You can [peruse some of my code](https://github.com/jasimmonsv), and I will [write about things in my blog]().
