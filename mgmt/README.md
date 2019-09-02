@@ -50,6 +50,6 @@ What all this means is for you working with me is that: no, I do not have that e
 
 ## Acknowledgments
 
-* Rand's Leadership Slack where I discovered this idea of a Management README.
+* [Rand's Leadership Slack where I discovered this idea of a Management README](http://randsinrepose.com/welcome-to-rands-leadership-slack/)
 * US Navy and Petty Officer training
 * Trials and tribulations of life
