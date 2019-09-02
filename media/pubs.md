@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Media/Publications
+exclude: true
 ---
 A small collection of publications and media that has covered my contributions and projects:
 
