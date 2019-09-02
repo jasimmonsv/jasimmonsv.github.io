@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Media/Publications
-permalink: /media/
 ---
 A small collection of publications and media that has covered my contributions and projects:
 
