@@ -45,3 +45,4 @@ defaults:
       path: "mgmt"
     values:
       exclude: true
+      layout: page
