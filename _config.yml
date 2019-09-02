@@ -42,6 +42,6 @@ kramdown:
   syntax_highlighter: rouge
 defaults:
   - scope:
-      path: "mgmt/"
+      path: "mgmt"
     values:
       exclude: true
