@@ -28,6 +28,8 @@ future: true
 jailed: false
 theme: jekyll-theme-primer
 gfm_quirks: paragraph_end
+plugins:
+  - jekyll-seo-tag
 #Config settings you cannot change
 lsi: false
 safe: true
