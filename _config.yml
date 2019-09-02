@@ -14,6 +14,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jasimmonsv.com" # the base hostname & protocol for your site
 twitter_username: jasimmonsv
 github_username:  jasimmonsv
+gitlab_username: jasimmonsv
 instagram_username: jasimmonsv
 
 # Build settings
