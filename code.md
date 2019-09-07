@@ -12,3 +12,6 @@ There are still good people out there in that scene, doing good things, but the 
 
 You can [peruse some of my code](https://github.com/jasimmonsv), and I will
 [write about things in my blog]().
+{% raw %}
+<iframe width="600" height="600" src="https://ionicabizau.github.io/github-profile-languages/api.html?@jasimmonsv" frameborder="0"></iframe>
+{% endraw %}
