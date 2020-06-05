@@ -10,7 +10,7 @@ I use to be very active in the hacker community, but I became jaded with the wan
 
 There are still good people out there in that scene, doing good things, but the majority of overheard conversation at my last Defcon where just sad and not a good path forward for technologists. Luckily, those people are but a small minority over the sheer number of people building things every day.
 
-You can [peruse some of my code](https://github.com/jasimmonsv), and I will
+You can peruse some of my code on [Gitlab](https://gitlab.com/jasimmonsv) and [Github](https://github.com/jasimmonsv), and I will
 [write about things in my blog]().
 {% raw %}
 <iframe width="600" height="600" src="https://ionicabizau.github.io/github-profile-languages/api.html?@jasimmonsv" frameborder="0"></iframe>
