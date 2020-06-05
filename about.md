@@ -4,7 +4,7 @@ title: About Me
 permalink: /about/
 ---
 
-Thank you for being interested enough in me to dig into my own little corner of the internet. This is my own personal site and as such reflects my own thoughts, ideas, and learning path. I am passionate about efficiency, leadership, and building great things.
+Thank you for being interested enough in me to dig into my own little corner of the internet. This is my own personal site and as such reflects my own thoughts, ideas, and learning path. I am passionate about learning, efficiency, leadership, and building great things.
 
 I am currently a "System Operations Manager", which is shorthand for "I build things." I currently build things for a security and cyber intelligence team. It is fun and ever changing, and I like the people I closely work with, which is all I can really ask for in a work environment. I have managed many people in my career, but I look for better ways to do it well.
 
