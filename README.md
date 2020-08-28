@@ -1,3 +1,8 @@
+---
+layout: page
+title: README
+permalink: /README/
+---
 # J.A. Simmons V
 v1.0.1-20190429 - Systems Operation Manager @Deloitte
 
