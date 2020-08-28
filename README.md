@@ -1,6 +1,5 @@
 ---
 layout: page
-title: README
 permalink: /README/
 ---
 # J.A. Simmons V
