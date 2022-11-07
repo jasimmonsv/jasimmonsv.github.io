@@ -3,6 +3,8 @@ layout: page
 title: Books
 permalink: /books/
 ---
+
+![https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ]
 I have always loved books. The feel, the ideal, the smell. I am a minor bibliophile who buys and trades books.
 My philosophy on books are pretty simple:
 
