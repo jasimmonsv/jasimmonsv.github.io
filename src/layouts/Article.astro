@@ -1,6 +1,5 @@
 ---
 import Base from './Base.astro';
-import SubscribeForm from '../components/SubscribeForm.astro';
 import { fmtDate, slugify } from '../lib/posts';
 
 interface Props {
@@ -17,7 +16,7 @@ interface Props {
 const { kind, title, summary, date, updated, minutes, tags = [], tagBase, extra } = Astro.props;
 const long = { year: 'numeric', month: 'long', day: 'numeric' } as const;
 ---
-<Base title={title} description={summary} type="article" footForm={kind === 'Project'}>
+<Base title={title} description={summary} type="article">
   <article data-pagefind-body>
     <p class="kicker" data-pagefind-meta="kind">{kind}</p>
     <h1 class="page-title" data-pagefind-meta="title">{title}</h1>
@@ -37,10 +36,4 @@ const long = { year: 'numeric', month: 'long', day: 'numeric' } as const;
       </ul>
     )}
   </article>
-  {kind !== 'Project' && (
-    <aside class="endcap" data-pagefind-ignore>
-      <p><strong>Get new essays by email.</strong> No tracking, and you can unsubscribe any time. Or follow the <a href="/rss.xml">RSS feed</a>.</p>
-      <SubscribeForm id="end-email" />
-    </aside>
-  )}
 </Base>

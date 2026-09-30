@@ -6,7 +6,7 @@ Source for [jasimmonsv.com](https://jasimmonsv.com). It's built with [Astro](htt
 
 | To publish | Put a Markdown file in | It appears at |
 | --- | --- | --- |
-| An essay | `src/content/writing/` | `/writing/<filename>/`, the home stream, `/rss.xml` and the newsletter |
+| An essay | `src/content/writing/` | `/writing/<filename>/`, the home stream, `/rss.xml` |
 | A note | `src/content/notes/` | `/notes/<filename>/`, the home stream, `/notes/rss.xml` |
 | A project write-up | `src/content/projects/` | `/projects/<filename>/` |
 
@@ -14,7 +14,7 @@ Copy the `_template.md` in each folder. Files starting with `_` never publish, a
 
 Pages: `/readme` (your Manager README) is `src/pages/readme.md` and `/about` is `src/pages/about.md`. The library is `src/data/library.json` (see `_library.example.json` for the shape). `/uses` is drafted at `src/pages/_uses.md`; rename it to `uses.md` to publish it.
 
-Names, links and the newsletter username live in `src/site.config.ts`.
+Names and links live in `src/site.config.ts`.
 
 ## Run it locally
 
@@ -34,7 +34,3 @@ npm run preview   # serves the built site, search included
 - `/.well-known/security.txt`: the security contact. Set up the `security@` mailbox before launch, and update `Expires` every year.
 - `/.well-known/webfinger`: lets `@jasimmonsv@jasimmonsv.com` resolve to the Hachyderm account. Check it against `https://hachyderm.io/.well-known/webfinger?resource=acct:jasimmonsv@hachyderm.io`.
 - `rel="me"` links are in every page head, for Mastodon profile verification.
-
-## Newsletter
-
-The subscribe forms post to Buttondown (username in `src/site.config.ts`). In Buttondown, point RSS-to-email at `https://jasimmonsv.com/rss.xml` so each new essay goes out automatically.

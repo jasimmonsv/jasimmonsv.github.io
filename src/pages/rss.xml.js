@@ -2,7 +2,7 @@ import rss from '@astrojs/rss';
 import { SITE } from '../site.config';
 import { getEssays } from '../lib/posts';
 
-// Essays only. Buttondown watches this feed and emails each new essay.
+// Essays only.
 export async function GET(context) {
   const essays = await getEssays();
   return rss({

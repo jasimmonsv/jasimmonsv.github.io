@@ -3,17 +3,14 @@ import '@fontsource-variable/source-serif-4';
 import '@fontsource-variable/source-sans-3';
 import '../styles/global.css';
 import Sidebar from '../components/Sidebar.astro';
-import SubscribeForm from '../components/SubscribeForm.astro';
 import { SITE, SOCIAL } from '../site.config';
 
 interface Props {
   title?: string;
   description?: string;
   type?: 'website' | 'article';
-  /** Article pages have their own subscribe box, so the mobile footer skips its form. */
-  footForm?: boolean;
 }
-const { title, description = SITE.description, type = 'website', footForm = true } = Astro.props;
+const { title, description = SITE.description, type = 'website' } = Astro.props;
 const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} · ${SITE.tagline}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -47,7 +44,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       <main id="content" class="main">
         <slot />
         <footer class="mobile-foot">
-          {footForm && (<><label class="sub-label" for="foot-email">Get new essays by email</label><SubscribeForm id="foot-email" /></>)}
           <div class="soc">
             <a href="/rss.xml">RSS</a>
             {SOCIAL.filter((s) => s.sidebar && s.show !== false).map((s) => <a href={s.url} rel={s.me ? 'me noopener' : 'noopener'}>{s.label}</a>)}

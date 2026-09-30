@@ -1,6 +1,5 @@
 ---
 import Mark from './Mark.astro';
-import SubscribeForm from './SubscribeForm.astro';
 import { SITE, SOCIAL, NAV } from '../site.config';
 import { getEssays, getNotes } from '../lib/posts';
 
@@ -29,8 +28,6 @@ const current = (href: string) => path === href || path.startsWith(href);
     </ul>
   </nav>
   <div class="side-foot">
-    <label class="sub-label" for="side-email">Get new essays by email</label>
-    <SubscribeForm id="side-email" />
     <div class="soc">
       <a href="/rss.xml">RSS</a>
       {SOCIAL.filter((s) => s.sidebar && s.show !== false).map((s) => (

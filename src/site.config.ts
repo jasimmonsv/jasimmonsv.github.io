@@ -7,8 +7,6 @@ export const SITE = {
   tagline: 'I build secure systems and high-performing teams.',
   description:
     'Essays and field notes from J.A. Simmons V on security, leadership, learning, radio and books.',
-  // Buttondown username. Create the newsletter at buttondown.com, then check this matches.
-  buttondown: 'jasimmonsv',
   // Security contact published in /.well-known/security.txt. Set this mailbox up before launch.
   securityEmail: 'security@jasimmonsv.com',
 };
