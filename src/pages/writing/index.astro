@@ -1,0 +1,13 @@
+---
+import Base from '../../layouts/Base.astro';
+import Stream from '../../components/Stream.astro';
+import { getStream } from '../../lib/posts';
+
+const posts = await getStream(['essay']);
+---
+<Base title="Writing" description="Essays on security, leadership and building teams.">
+  <p class="kicker">Writing</p>
+  <h1 class="page-title">Essays</h1>
+  <p class="lede">Longer pieces on security, leadership and building teams. Short-form work lives in <a href="/notes/">Notes</a>.</p>
+  <Stream posts={posts} searchLabel="Search essays and notes" empty="No essays published yet." />
+</Base>

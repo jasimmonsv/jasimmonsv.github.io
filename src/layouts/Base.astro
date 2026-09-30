@@ -1,0 +1,59 @@
+---
+import '@fontsource-variable/source-serif-4';
+import '@fontsource-variable/source-sans-3';
+import '../styles/global.css';
+import Sidebar from '../components/Sidebar.astro';
+import SubscribeForm from '../components/SubscribeForm.astro';
+import { SITE, SOCIAL } from '../site.config';
+
+interface Props {
+  title?: string;
+  description?: string;
+  type?: 'website' | 'article';
+  /** Article pages have their own subscribe box, so the mobile footer skips its form. */
+  footForm?: boolean;
+}
+const { title, description = SITE.description, type = 'website', footForm = true } = Astro.props;
+const fullTitle = title ? `${title} · ${SITE.name}` : `${SITE.name} · ${SITE.tagline}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={title ?? SITE.name} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="fediverse:creator" content="@jasimmonsv@hachyderm.io" />
+    <meta name="theme-color" content="#1c1917" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name}: essays`} href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name}: notes`} href="/notes/rss.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    {SOCIAL.filter((s) => s.me && s.show !== false).map((s) => <link rel="me" href={s.url} />)}
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <div class="shell">
+      <Sidebar />
+      <main id="content" class="main">
+        <slot />
+        <footer class="mobile-foot">
+          {footForm && (<><label class="sub-label" for="foot-email">Get new essays by email</label><SubscribeForm id="foot-email" /></>)}
+          <div class="soc">
+            <a href="/rss.xml">RSS</a>
+            {SOCIAL.filter((s) => s.sidebar && s.show !== false).map((s) => <a href={s.url} rel={s.me ? 'me noopener' : 'noopener'}>{s.label}</a>)}
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

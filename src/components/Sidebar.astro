@@ -1,0 +1,41 @@
+---
+import Mark from './Mark.astro';
+import SubscribeForm from './SubscribeForm.astro';
+import { SITE, SOCIAL, NAV } from '../site.config';
+import { getEssays, getNotes } from '../lib/posts';
+
+const path = Astro.url.pathname;
+const counts: Record<string, number> = {
+  writing: (await getEssays()).length,
+  notes: (await getNotes()).length,
+};
+const current = (href: string) => path === href || path.startsWith(href);
+---
+<header class="sidebar">
+  <a class="brand" href="/" aria-label={`${SITE.name}, home`}>
+    <Mark /><span>{SITE.name}</span>
+  </a>
+  <p class="pos">{SITE.tagline}</p>
+  <nav aria-label="Site">
+    <ul class="nav">
+      {NAV.map((item) => (
+        <li>
+          <a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>
+            {item.label}
+            {'collection' in item && counts[item.collection] > 0 && <small>{counts[item.collection]}</small>}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+  <div class="side-foot">
+    <label class="sub-label" for="side-email">Get new essays by email</label>
+    <SubscribeForm id="side-email" />
+    <div class="soc">
+      <a href="/rss.xml">RSS</a>
+      {SOCIAL.filter((s) => s.sidebar && s.show !== false).map((s) => (
+        <a href={s.url} rel={s.me ? 'me noopener' : 'noopener'}>{s.label}</a>
+      ))}
+    </div>
+  </div>
+</header>

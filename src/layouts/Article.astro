@@ -1,0 +1,46 @@
+---
+import Base from './Base.astro';
+import SubscribeForm from '../components/SubscribeForm.astro';
+import { fmtDate, slugify } from '../lib/posts';
+
+interface Props {
+  kind: 'Essay' | 'Note' | 'Project';
+  title: string;
+  summary?: string;
+  date?: Date;
+  updated?: Date;
+  minutes?: number;
+  tags?: string[];
+  tagBase?: string;
+  extra?: string;
+}
+const { kind, title, summary, date, updated, minutes, tags = [], tagBase, extra } = Astro.props;
+const long = { year: 'numeric', month: 'long', day: 'numeric' } as const;
+---
+<Base title={title} description={summary} type="article" footForm={kind === 'Project'}>
+  <article data-pagefind-body>
+    <p class="kicker" data-pagefind-meta="kind">{kind}</p>
+    <h1 class="page-title" data-pagefind-meta="title">{title}</h1>
+    {summary && <p class="lede">{summary}</p>}
+    <p class="byline">
+      {date && <time datetime={date.toISOString()}>{fmtDate(date, long)}</time>}
+      {updated && <> · updated <time datetime={updated.toISOString()}>{fmtDate(updated, long)}</time></>}
+      {minutes && <> · {minutes} min read</>}
+      {extra && <>{date ? ' · ' : ''}{extra}</>}
+    </p>
+    <div class="prose">
+      <slot />
+    </div>
+    {tags.length > 0 && (
+      <ul class="tags" aria-label="Tags">
+        {tags.map((t) => <li>{tagBase ? <a href={`${tagBase}${slugify(t)}/`}>{t}</a> : <span>{t}</span>}</li>)}
+      </ul>
+    )}
+  </article>
+  {kind !== 'Project' && (
+    <aside class="endcap" data-pagefind-ignore>
+      <p><strong>Get new essays by email.</strong> No tracking, and you can unsubscribe any time. Or follow the <a href="/rss.xml">RSS feed</a>.</p>
+      <SubscribeForm id="end-email" />
+    </aside>
+  )}
+</Base>

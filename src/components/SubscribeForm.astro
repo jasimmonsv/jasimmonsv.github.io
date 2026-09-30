@@ -1,0 +1,11 @@
+---
+import { SITE } from '../site.config';
+interface Props { id?: string }
+const { id = 'sub-email' } = Astro.props;
+---
+<form class="sub-form" action={`https://buttondown.com/api/emails/embed-subscribe/${SITE.buttondown}`} method="post">
+  <label for={id} class="visually-hidden">Email address</label>
+  <input id={id} type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+  <input type="hidden" name="embed" value="1" />
+  <button type="submit">Subscribe</button>
+</form>

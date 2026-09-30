@@ -1,0 +1,22 @@
+---
+// Layout for Markdown pages in src/pages (readme, about, uses).
+import Base from './Base.astro';
+
+interface Props {
+  frontmatter?: { title: string; kicker?: string; lede?: string; description?: string };
+  title?: string;
+  kicker?: string;
+  lede?: string;
+}
+const fm = Astro.props.frontmatter ?? (Astro.props as { title: string; kicker?: string; lede?: string; description?: string });
+---
+<Base title={fm.title} description={fm.description ?? fm.lede}>
+  <article data-pagefind-body>
+    {fm.kicker && <p class="kicker" data-pagefind-meta="kind">{fm.kicker}</p>}
+    <h1 class="page-title" data-pagefind-meta="title">{fm.title}</h1>
+    {fm.lede && <p class="lede">{fm.lede}</p>}
+    <div class="prose" style="margin-top: 24px">
+      <slot />
+    </div>
+  </article>
+</Base>

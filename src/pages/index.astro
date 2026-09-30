@@ -1,0 +1,11 @@
+---
+import Base from '../layouts/Base.astro';
+import Stream from '../components/Stream.astro';
+import { getStream } from '../lib/posts';
+
+const posts = await getStream();
+---
+<Base>
+  <h1 class="visually-hidden">Writing and notes</h1>
+  <Stream posts={posts} filters empty="The first essays are on the way. Subscribe in the sidebar to get them by email." />
+</Base>

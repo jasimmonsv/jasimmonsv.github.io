@@ -1,0 +1,135 @@
+---
+import type { Post } from '../lib/posts';
+import { fmtDate, slugify } from '../lib/posts';
+
+interface Props {
+  posts: Post[];
+  /** Show the All / Essays / Notes filter (home page only). */
+  filters?: boolean;
+  searchLabel?: string;
+  empty?: string;
+}
+const { posts, filters = false, searchLabel = 'Search writing and notes', empty = 'Nothing here yet.' } = Astro.props;
+
+const years = new Map<number, Post[]>();
+for (const p of posts) {
+  const y = p.date.getUTCFullYear();
+  if (!years.has(y)) years.set(y, []);
+  years.get(y)!.push(p);
+}
+---
+<div class="tools" role="search">
+  <label for="q" class="visually-hidden">{searchLabel}</label>
+  <input id="q" class="search" type="search" placeholder={searchLabel} autocomplete="off" data-search />
+  {filters && (
+    <div class="pills" role="group" aria-label="Filter posts">
+      <button class="pill" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="pill" type="button" data-filter="essay" aria-pressed="false">Essays</button>
+      <button class="pill" type="button" data-filter="note" aria-pressed="false">Notes</button>
+    </div>
+  )}
+</div>
+
+<div data-results hidden aria-live="polite"></div>
+
+<div data-stream>
+  {posts.length === 0 && <p class="empty">{empty}</p>}
+  {[...years].map(([year, items]) => (
+    <section data-year>
+      <h2 class="year">{year}</h2>
+      {items.map((p) => (
+        <article class={`post ${p.kind}`} data-kind={p.kind}>
+          <div class="meta">
+            <time datetime={p.date.toISOString()}>{fmtDate(p.date)}</time>
+            <span class={`kind ${p.kind}`}>{p.kind === 'essay' ? 'Essay' : 'Note'}</span>
+          </div>
+          <div>
+            <h2><a href={p.href}>{p.title}</a></h2>
+            {p.summary && <p>{p.summary}</p>}
+            {p.kind === 'essay' ? (
+              <div class="sub">{p.minutes} min read</div>
+            ) : (
+              p.tags.length > 0 && (
+                <div class="sub">
+                  {p.tags.map((t, i) => (
+                    <>{i > 0 && ' · '}<a href={`/notes/tags/${slugify(t)}/`}>{t}</a></>
+                  ))}
+                </div>
+              )
+            )}
+          </div>
+        </article>
+      ))}
+    </section>
+  ))}
+</div>
+
+<script is:inline>
+  // Plain inline script (not bundled) so the Pagefind import is loaded at runtime as-is.
+  // Filters: hide posts by kind, and hide year headings that end up empty.
+  const stream = document.querySelector('[data-stream]');
+  document.querySelectorAll('[data-filter]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      document.querySelectorAll('[data-filter]').forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+      stream?.querySelectorAll('[data-kind]').forEach((a) => {
+        a.hidden = f !== 'all' && a.dataset.kind !== f;
+      });
+      stream?.querySelectorAll('[data-year]').forEach((s) => {
+        s.hidden = !s.querySelector('[data-kind]:not([hidden])');
+      });
+    });
+  });
+
+  // Search: Pagefind runs entirely in the browser against a static index built at deploy time.
+  const input = document.querySelector('[data-search]');
+  const results = document.querySelector('[data-results]');
+  let pagefind;
+  let timer;
+
+  async function load() {
+    if (pagefind) return pagefind;
+    try {
+      const url = '/pagefind/pagefind.js';
+      pagefind = await import(url);
+      await pagefind.init?.();
+    } catch {
+      pagefind = null;
+    }
+    return pagefind;
+  }
+
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
+  async function run(q) {
+    if (!results || !stream) return;
+    if (!q.trim()) {
+      results.hidden = true;
+      results.innerHTML = '';
+      stream.hidden = false;
+      return;
+    }
+    const pf = await load();
+    stream.hidden = true;
+    results.hidden = false;
+    if (!pf) {
+      results.innerHTML = '<p class="results-note">Search is available on the built site (run <code>npm run build</code>, then <code>npm run preview</code>).</p>';
+      return;
+    }
+    const res = await pf.search(q);
+    const data = await Promise.all(res.results.slice(0, 20).map((r) => r.data()));
+    results.innerHTML =
+      `<p class="results-note">${data.length ? `${res.results.length} result${res.results.length === 1 ? '' : 's'}` : 'No results'} for “${esc(q)}”</p>` +
+      data
+        .map(
+          (d) => `<article class="post search-hit"><div class="meta">${esc(d.meta?.kind ?? '')}</div><div><h2><a href="${d.url}">${esc(d.meta?.title ?? d.url)}</a></h2><p>${d.excerpt}</p></div></article>`,
+        )
+        .join('');
+  }
+
+  input?.addEventListener('focus', load, { once: true });
+  input?.addEventListener('input', () => {
+    clearTimeout(timer);
+    timer = window.setTimeout(() => run(input.value), 150);
+  });
+</script>

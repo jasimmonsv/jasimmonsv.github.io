@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const projects = (await getCollection('projects', (p) => !(import.meta.env.PROD && p.data.draft)))
+  .sort((a, b) => a.data.order - b.data.order);
+---
+<Base title="Projects" description="Systems I have built and led, with short write-ups.">
+  <p class="kicker">Projects</p>
+  <h1 class="page-title">Systems portfolio</h1>
+  <p class="lede">Things I've built and led: what the problem was, what I did, and what I'd do differently.</p>
+  {projects.length === 0 ? (
+    <p class="empty">Write-ups are in progress.</p>
+  ) : (
+    <div class="cards">
+      {projects.map((p) => (
+        <article class="card">
+          <h2><a href={`/projects/${p.id}/`}>{p.data.title}</a></h2>
+          <p>{p.data.summary}</p>
+          {(p.data.role || p.data.period) && <div class="sub">{[p.data.role, p.data.period].filter(Boolean).join(' · ')}</div>}
+        </article>
+      ))}
+    </div>
+  )}
+</Base>

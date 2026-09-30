@@ -1,0 +1,17 @@
+---
+import { getCollection, render } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', (p) => !(import.meta.env.PROD && p.data.draft));
+  return projects.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const extra = [d.role, d.period, d.stack.length ? d.stack.join(', ') : undefined].filter(Boolean).join(' · ');
+---
+<Article kind="Project" title={d.title} summary={d.summary} extra={extra}>
+  <Content />
+  {d.link && <p><a href={d.link}>Visit the project →</a></p>}
+</Article>
