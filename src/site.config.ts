@@ -4,7 +4,7 @@ export const SITE = {
   name: 'J.A. Simmons V',
   handle: 'jasimmonsv',
   url: 'https://jasimmonsv.com',
-  tagline: 'I build secure systems and high-performing teams.',
+  tagline: 'Things I\'ve built, broken, and learned from.',
   description:
     'Essays and field notes from J.A. Simmons V on security, leadership, learning, radio and books.',
   // Security contact published in /.well-known/security.txt. Set this mailbox up before launch.
