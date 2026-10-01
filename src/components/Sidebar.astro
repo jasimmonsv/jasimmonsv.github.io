@@ -1,12 +1,12 @@
 ---
 import Mark from './Mark.astro';
 import { SITE, SOCIAL, NAV } from '../site.config';
-import { getEssays, getNotes } from '../lib/posts';
+import { getEssays, getThoughts } from '../lib/posts';
 
 const path = Astro.url.pathname;
 const counts: Record<string, number> = {
   writing: (await getEssays()).length,
-  notes: (await getNotes()).length,
+  thoughts: (await getThoughts()).length,
 };
 const current = (href: string) => path === href || path.startsWith(href);
 ---

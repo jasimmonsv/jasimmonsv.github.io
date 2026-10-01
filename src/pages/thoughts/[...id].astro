@@ -1,0 +1,15 @@
+---
+import { render } from 'astro:content';
+import Article from '../../layouts/Article.astro';
+import { getThoughts } from '../../lib/posts';
+
+export async function getStaticPaths() {
+  const thoughts = await getThoughts();
+  return thoughts.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<Article kind="Thought" title={entry.data.title} date={entry.data.date} tags={entry.data.tags} tagBase="/thoughts/tags/">
+  <Content />
+</Article>

@@ -4,12 +4,12 @@ import { fmtDate, slugify } from '../lib/posts';
 
 interface Props {
   posts: Post[];
-  /** Show the All / Essays / Notes filter (home page only). */
+  /** Show the All / Essays / Thoughts filter (home page only). */
   filters?: boolean;
   searchLabel?: string;
   empty?: string;
 }
-const { posts, filters = false, searchLabel = 'Search writing and notes', empty = 'Nothing here yet.' } = Astro.props;
+const { posts, filters = false, searchLabel = 'Search essays and thoughts', empty = 'Nothing here yet.' } = Astro.props;
 
 const years = new Map<number, Post[]>();
 for (const p of posts) {
@@ -25,7 +25,7 @@ for (const p of posts) {
     <div class="pills" role="group" aria-label="Filter posts">
       <button class="pill" type="button" data-filter="all" aria-pressed="true">All</button>
       <button class="pill" type="button" data-filter="essay" aria-pressed="false">Essays</button>
-      <button class="pill" type="button" data-filter="note" aria-pressed="false">Notes</button>
+      <button class="pill" type="button" data-filter="thought" aria-pressed="false">Thoughts</button>
     </div>
   )}
 </div>
@@ -41,7 +41,7 @@ for (const p of posts) {
         <article class={`post ${p.kind}`} data-kind={p.kind}>
           <div class="meta">
             <time datetime={p.date.toISOString()}>{fmtDate(p.date)}</time>
-            <span class={`kind ${p.kind}`}>{p.kind === 'essay' ? 'Essay' : 'Note'}</span>
+            <span class={`kind ${p.kind}`}>{p.kind === 'essay' ? 'Essay' : 'Thought'}</span>
           </div>
           <div>
             <h2><a href={p.href}>{p.title}</a></h2>
@@ -52,7 +52,7 @@ for (const p of posts) {
               p.tags.length > 0 && (
                 <div class="sub">
                   {p.tags.map((t, i) => (
-                    <>{i > 0 && ' · '}<a href={`/notes/tags/${slugify(t)}/`}>{t}</a></>
+                    <>{i > 0 && ' · '}<a href={`/thoughts/tags/${slugify(t)}/`}>{t}</a></>
                   ))}
                 </div>
               )

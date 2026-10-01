@@ -6,7 +6,7 @@ lede: "I build secure systems and high-performing teams. Outside of work I'm an 
 description: "About J.A. Simmons V: security leader, amateur radio operator KI5VUY, reader, and reluctant runner."
 ---
 
-I'm Simmons. Just Simmons. Between Texas high-school football and five years in the Navy, that's the name that stuck. This site is my own corner of the internet: essays on security and leadership, field notes from whatever I'm building, and the books I keep.
+I'm Simmons. Just Simmons. Between Texas high-school football and five years in the Navy, that's the name that stuck. This site is my own corner of the internet: essays on security and leadership, thoughts on whatever I'm building, and the books I keep.
 
 If you want to know how I lead, start with my [Manager README](/readme/).
 

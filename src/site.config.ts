@@ -6,7 +6,7 @@ export const SITE = {
   url: 'https://jasimmonsv.com',
   tagline: 'Things I\'ve built, broken, and learned from.',
   description:
-    'Essays and field notes from J.A. Simmons V on security, leadership, learning, radio and books.',
+    'Essays and thoughts from J.A. Simmons V on security, leadership, learning, radio and books.',
   // Security contact published in /.well-known/security.txt. Set this mailbox up before launch.
   securityEmail: 'security@jasimmonsv.com',
 };
@@ -38,7 +38,7 @@ export const SOCIAL: Social[] = [
 
 export const NAV = [
   { label: 'Writing', href: '/writing/', collection: 'writing' },
-  { label: 'Notes', href: '/notes/', collection: 'notes' },
+  { label: 'Thoughts', href: '/thoughts/', collection: 'thoughts' },
   { label: 'Projects', href: '/projects/' },
   { label: 'Readme', href: '/readme/' },
   { label: 'Library', href: '/library/' },

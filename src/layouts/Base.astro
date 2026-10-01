@@ -33,7 +33,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title={`${SITE.name}: essays`} href="/rss.xml" />
-    <link rel="alternate" type="application/rss+xml" title={`${SITE.name}: notes`} href="/notes/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title={`${SITE.name}: thoughts`} href="/thoughts/rss.xml" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     {SOCIAL.filter((s) => s.me && s.show !== false).map((s) => <link rel="me" href={s.url} />)}
   </head>

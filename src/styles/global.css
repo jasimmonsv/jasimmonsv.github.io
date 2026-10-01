@@ -68,7 +68,7 @@ h1, h2, h3, h4 { font-family: var(--serif); color: var(--ink); font-weight: 600;
 .soc a { color: var(--pmuted); text-decoration: none; }
 .soc a:hover { color: #fff; }
 
-/* ---------- Stream (home, /writing, /notes) ---------- */
+/* ---------- Stream (home, /writing, /thoughts) ---------- */
 .tools { position: sticky; top: 0; z-index: 2; background: var(--paper); display: flex; gap: 10px; align-items: center; padding: 6px 0 12px; flex-wrap: wrap; }
 .search { flex: 1 1 240px; font: .95rem var(--sans); padding: 8px 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); color: var(--ink); }
 .search::placeholder { color: var(--muted); }
@@ -80,9 +80,9 @@ h1, h2, h3, h4 { font-family: var(--serif); color: var(--ink); font-weight: 600;
 .post { display: grid; grid-template-columns: 78px minmax(0, 1fr); gap: 4px 18px; padding: 16px 0; border-bottom: 1px solid var(--line); }
 .post .meta { font-size: .8rem; color: var(--muted); line-height: 1.4; padding-top: 5px; }
 .post .kind { display: block; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; font-size: .7rem; color: var(--ox); margin-top: 3px; }
-.post .kind.note { color: var(--muted); }
+.post .kind.thought { color: var(--muted); }
 .post h2 { font-size: 1.25rem; margin: 0; }
-.post.note h2 { font-size: 1.07rem; font-weight: 500; }
+.post.thought h2 { font-size: 1.07rem; font-weight: 500; }
 .post h2 a { color: var(--ink); text-decoration: none; }
 .post h2 a:hover { color: var(--ox); }
 .post p { margin: 4px 0 0; font-size: .95rem; }

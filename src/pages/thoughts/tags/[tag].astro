@@ -1,0 +1,19 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Stream from '../../../components/Stream.astro';
+import { getThoughts, getStream, slugify } from '../../../lib/posts';
+
+export async function getStaticPaths() {
+  const names = new Map<string, string>();
+  for (const n of await getThoughts()) for (const t of n.data.tags) names.set(slugify(t), t);
+  return [...names].map(([tag, name]) => ({ params: { tag }, props: { name } }));
+}
+const { tag } = Astro.params;
+const { name } = Astro.props;
+const posts = (await getStream(['thought'])).filter((p) => p.tags.some((t) => slugify(t) === tag));
+---
+<Base title={`Thoughts tagged ${name}`}>
+  <p class="kicker"><a href="/thoughts/">Thoughts</a></p>
+  <h1 class="page-title">Tagged “{name}”</h1>
+  <Stream posts={posts} searchLabel="Search thoughts and essays" />
+</Base>

@@ -7,7 +7,7 @@ Source for [jasimmonsv.com](https://jasimmonsv.com). It's built with [Astro](htt
 | To publish | Put a Markdown file in | It appears at |
 | --- | --- | --- |
 | An essay | `src/content/writing/` | `/writing/<filename>/`, the home stream, `/rss.xml` |
-| A note | `src/content/notes/` | `/notes/<filename>/`, the home stream, `/notes/rss.xml` |
+| A thought | `src/content/thoughts/` | `/thoughts/<filename>/`, the home stream, `/thoughts/rss.xml` |
 | A project write-up | `src/content/projects/` | `/projects/<filename>/` |
 
 Copy the `_template.md` in each folder. Files starting with `_` never publish, and `draft: true` keeps a post visible in `npm run dev` but out of the live site. The frontmatter is type-checked (see `src/content.config.ts`), so a missing title or bad date fails the build instead of publishing something broken.
